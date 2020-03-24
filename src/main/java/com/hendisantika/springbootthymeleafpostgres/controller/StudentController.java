@@ -3,6 +3,8 @@ package com.hendisantika.springbootthymeleafpostgres.controller;
 import com.hendisantika.springbootthymeleafpostgres.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,4 +19,11 @@ import org.springframework.stereotype.Controller;
 public class StudentController {
     @Autowired
     private StudentRepository studentRepository;
+
+    @GetMapping("/")
+    public String createHome(Model model) {
+        model.addAttribute("student", studentRepository.findAll());
+        return "home";
+    }
+
 }
