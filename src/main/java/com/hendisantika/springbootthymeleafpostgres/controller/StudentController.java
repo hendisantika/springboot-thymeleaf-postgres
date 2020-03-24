@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,6 +32,12 @@ public class StudentController {
     public String create1(Model model) {
         model.addAttribute("student", new Student());
         return "formStudent";
+    }
+
+    @PostMapping(value = "/create")
+    public String create2(Model model, Student student) {
+        model.addAttribute("student", studentRepository.save(student));
+        return "redirect:/";
     }
 
 }
