@@ -26,7 +26,7 @@ public class StudentController {
     @GetMapping("/")
     public String createHome(Model model) {
         model.addAttribute("student", studentRepository.findAll());
-        return "home";
+        return "index";
     }
 
     @GetMapping(value = "/create")
