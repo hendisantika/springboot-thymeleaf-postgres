@@ -5,3 +5,8 @@
 2. Go to folder: `cd springboot-thymeleaf-postgres`
 3. Run application: `mvn clean spring-boot:run`
 
+## Screen shot
+
+![Add New Student](img/add.png "Add New Student")
+
+![List Down Student](img/list.png "List Down Student")
