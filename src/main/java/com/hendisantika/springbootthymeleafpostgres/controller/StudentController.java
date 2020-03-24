@@ -46,4 +46,10 @@ public class StudentController {
         model.addAttribute("student", studentRepository.getOne(id));
         return "formStudent";
     }
+
+    @GetMapping(value = "/hapus/{id}")
+    public String hapusStudent(@PathVariable Integer id) {
+        studentRepository.deleteById(id);
+        return "redirect:/";
+    }
 }
