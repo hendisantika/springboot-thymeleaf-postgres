@@ -1,5 +1,6 @@
 package com.hendisantika.springbootthymeleafpostgres.controller;
 
+import com.hendisantika.springbootthymeleafpostgres.entity.Student;
 import com.hendisantika.springbootthymeleafpostgres.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,12 @@ public class StudentController {
     public String createHome(Model model) {
         model.addAttribute("student", studentRepository.findAll());
         return "home";
+    }
+
+    @GetMapping(value = "/create")
+    public String create1(Model model) {
+        model.addAttribute("student", new Student());
+        return "formStudent";
     }
 
 }
